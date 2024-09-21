@@ -26,8 +26,14 @@
 html, body {
     height: 100%;
     width: 100%;
-    font-size: 16px;
+    font-size: calc(14px + 1vw);
 }
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
 
 #main {
     position: relative;
@@ -35,11 +41,13 @@ html, body {
 }
 
 #page1 {
-    min-height: 100vh;
+    height: 100%;
     width: 100%;
     background-color: #EFEAE3;
     position: relative;
-    padding: 0 2vw;
+    padding:  2vw;
+    padding-bottom: 0;
+    margin: 0;
 }
 
 nav {
@@ -50,7 +58,12 @@ nav {
     justify-content: space-between;
 }
 
-nav > svg {
+#nav-part2, #page2-bottom {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav > img {
     width: 40px;
     height: auto;
 }
@@ -103,6 +116,7 @@ nav > svg {
 }
 
 #center {
+    flex-wrap: wrap;
     height: 65vh;
     width: 100%;
     display: flex;
@@ -129,6 +143,8 @@ nav > svg {
     width: 100%;
     border-radius: 20px;
     margin-top: 4vw;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 #hero-shape {
@@ -136,7 +152,6 @@ nav > svg {
     width: 46vw;
     height: 36vw;
     right: 0;
-    top: 65vh;
 }
 
 #hero-1, #hero-2, #hero-3 {
@@ -145,7 +160,7 @@ nav > svg {
 }
 
 #hero-1 {
-    background-color: #FE320A;
+    background-color: #1e03a8;
     height: 100%;
     width: 100%;
     border-top-left-radius: 50%;
@@ -154,7 +169,7 @@ nav > svg {
 }
 
 #hero-2, #hero-3 {
-    background: linear-gradient(#ff2d03, #ffba0b);
+    background: linear-gradient(#2f04ee, #f3f3f6);
     height: 30vw;
     width: 30vw;
     filter: blur(25px);
@@ -179,7 +194,7 @@ nav > svg {
 }
 
 #page2 {
-    min-height: 100vh;
+    height: 100%;
     width: 100%;
     background-color: #EFEAE3;
     padding: 8vw 0;
@@ -210,7 +225,7 @@ nav > svg {
 #circle {
     width: 10px;
     height: 10px;
-    background-color: #FF0000;
+    background-color: #390dbb;
     border-radius: 50%;
     display: inline-block;
     margin: 0.2vw 0.5vw;
@@ -258,7 +273,7 @@ nav > svg {
     width: 32vw;
     position: absolute;
     border-radius: 50%;
-    background: linear-gradient(to top right, #ff2d03, #fcba2e);
+    background: linear-gradient(to top right, #2f04ee, #f3f3f6);
     top: 50%;
     left: 30%;
     filter: blur(20px);
@@ -277,10 +292,11 @@ nav > svg {
 }
 
 #page3 {
-    min-height: 100vh;
+    min-height: 100%;
     width: 100%;
     background-color: #EFEAE3;
     padding: 2vw 0;
+    margin: 0;
 }
 
 .elem {
@@ -292,6 +308,12 @@ nav > svg {
     display: flex;
     align-items: center;
     padding: 0 2vw;
+    /* background-color: #fff; */
+}
+
+#elem-container {
+    margin: 0;
+    background-color: #fff;
 }
 
 .elem h2 {
@@ -300,13 +322,14 @@ nav > svg {
     z-index: 1;
 }
 
+
 .overlay {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     height: 100%;
     width: 100%;
-    background-color: rgb(255, 160, 77);
+    background-color: rgb(212, 196, 254);
     position: absolute;
     left: 0;
     top: -100%;
@@ -347,7 +370,8 @@ nav > svg {
     width: 100%;
     height: 70vh;
     padding: 10vw 2vw;
-    background-color: #EFEAE3;
+    background-color: #ffffff;
+
 }
 
 .swiper {
@@ -474,13 +498,13 @@ nav > svg {
 .gooey1 {
     left: 0;
     transform: rotate(12deg);
-    background: linear-gradient(to bottom right, #FE320A, #fe6c0a);
+    background: linear-gradient(to bottom right, #2f04ee, #f3f3f6);
 }
 
 .gooey2 {
     right: 0;
     transform: rotate(-12deg);
-    background: #FE320A;
+    background: linear-gradient(to right, #2f04ee, #f3f3f6);
 }
 
 @keyframes footergooey {
@@ -526,7 +550,7 @@ nav > svg {
 #loader h1 {
     font-size: 4vw;
     color: transparent;
-    background: linear-gradient(to right, orange, orangered);
+    background: linear-gradient(to right, #2f04ee, #f3f3f6);
     -webkit-background-clip: text;
     background-clip: text;
     position: absolute;
@@ -548,20 +572,24 @@ nav > svg {
     10%, 90% { opacity: 1; }
 }
 
-/* Media Queries for Responsiveness */
+/* Base Styling for Large Screens */
+@media (min-width: 1200px) {
+    html, body {
+        font-size: 16px; /* Larger screens get default font size */
+    }
+}
+
+/* For Tablets and Smaller Desktops */
 @media (max-width: 1200px) {
     html, body {
         font-size: 14px;
     }
-}
-
-@media (max-width: 992px) {
     #center #left h3 {
-        width: 40vw;
-        font-size: 2.5vw;
+        width: 35vw;
+        font-size: 2.2vw;
     }
     #center #right h1 {
-        font-size: 12vw;
+        font-size: 9vw;
     }
     #page2-bottom {
         flex-direction: column;
@@ -572,15 +600,10 @@ nav > svg {
         font-size: 5vw;
         margin-bottom: 2rem;
     }
-    #bottom-part2 {
-        width: 50%;
-    }
 }
 
-@media (max-width: 768px) {
-    #nav-part2 {
-        display: none;
-    }
+/* For Smaller Tablets and Large Mobile Devices */
+@media (max-width: 992px) {
     #center {
         flex-direction: column;
         align-items: flex-start;
@@ -589,30 +612,36 @@ nav > svg {
     #center #left h3, #center #right h1 {
         width: 100%;
         text-align: left;
-        font-size: 6vw;
+        font-size: 5vw;
     }
     #center #right h1 {
-        font-size: 15vw;
-        line-height: 1;
+        font-size: 14vw;
     }
     #page2-bottom h1 {
-        font-size: 7vw;
+        font-size: 6vw;
     }
     #bottom-part2 {
-        width: 100%;
-    }
-    .footer-top {
-        flex-direction: column;
-        padding: 0 2rem;
+        width: 70%;
     }
 }
 
+/* For Small Mobile Devices */
 @media (max-width: 576px) {
+    html, body {
+        font-size: 12px; /* Reduce font size for smaller screens */
+    }
+    #center #left h3 {
+        font-size: 4.5vw;
+    }
+    #center #right h1 {
+        font-size: 12vw;
+        line-height: 1.1;
+    }
     #loader h1 {
-        font-size: 9vw;
+        font-size: 8vw;
     }
     .elem h2 {
-        font-size: 5vw;
+        font-size: 4.5vw;
     }
     #footer-bottom {
         flex-direction: column;
