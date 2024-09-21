@@ -368,8 +368,8 @@ nav > img {
 
 #page4 {
     width: 100%;
-    height: 70vh;
-    padding: 10vw 2vw;
+    height: 100%;
+    padding: 10vw 0vw;
     background-color: #ffffff;
 
 }
@@ -377,6 +377,7 @@ nav > img {
 .swiper {
     width: 100%;
     height: 100%;
+    padding: 0;
 }
 
 .swiper-slide {
@@ -384,6 +385,11 @@ nav > img {
     border-left: 1px solid #aeadad;
 }
 
+.swiper-wrapper {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
 .swiper-wrapper .card {
     display: flex;
     flex-direction: column;
