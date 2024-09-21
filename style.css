@@ -27,6 +27,7 @@ html, body {
     height: 100%;
     width: 100%;
     font-size: calc(14px + 1vw);
+    scroll-behavior: smooth;
 }
 
 img, video {
@@ -38,6 +39,7 @@ img, video {
 #main {
     position: relative;
     z-index: 10;
+    scroll-behavior: smooth;
 }
 
 #page1 {
@@ -488,7 +490,8 @@ nav > img {
 }
 
 .footer-wrapper h1 {
-    font-size: 23vw;
+    font-size: 14vw;
+    margin: 1rem;
 }
 
 #footer-div {
