@@ -295,7 +295,7 @@ nav > img {
     min-height: 100%;
     width: 100%;
     background-color: #EFEAE3;
-    padding: 2vw 0;
+    padding: 0;
     margin: 0;
 }
 
@@ -313,7 +313,7 @@ nav > img {
 
 #elem-container {
     margin: 0;
-    background-color: #fff;
+    background-color: #dadada76;
 }
 
 .elem h2 {
@@ -381,7 +381,6 @@ nav > img {
 
 .swiper-slide {
     width: 30%;
-    padding: 0 3vw;
     border-left: 1px solid #aeadad;
 }
 
@@ -397,6 +396,9 @@ nav > img {
 .card p {
     font-size: 1.1rem;
     font-weight: 300;
+    padding: 0;
+    margin: 0;
+  
 }
 
 #part5 {
